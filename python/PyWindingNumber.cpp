@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_WindingNumber(py::module &m) {
+void init_WindingNumber(py::module_ &m) {
     py::class_<WindingNumberEngine, std::shared_ptr<WindingNumberEngine> >(
             m, "WindingNumberEngine")
         .def_static("create", &WindingNumberEngine::create)

@@ -8,7 +8,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_MeshFactory(py::module &m) {
+void init_MeshFactory(py::module_ &m) {
     py::class_<MeshFactory>(m, "MeshFactory")
         .def(py::init<>())
         .def("load_file", &MeshFactory::load_file,

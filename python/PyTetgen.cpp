@@ -8,7 +8,7 @@
 
 namespace py = pybind11;
 
-void init_TetgenWrapper(py::module& m) {
+void init_TetgenWrapper(py::module_& m) {
 #if WITH_TETGEN
     using namespace PyMesh;
     py::class_<TetgenWrapper, std::shared_ptr<TetgenWrapper> > tetgen(m, "tetgen");

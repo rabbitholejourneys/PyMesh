@@ -71,6 +71,12 @@ def build(package, cleanup):
         build_generic("json",
                 " -DJSON_BuildTests=Off",
                 cleanup=cleanup);
+    elif package == "mmg":
+        # GCC 10+ changed default to -fno-common; MMG has multiple C global
+        # definitions that require the old -fcommon behavior to link.
+        build_generic("mmg",
+                " -DCMAKE_C_FLAGS=-fcommon -DCMAKE_CXX_FLAGS=-fcommon",
+                cleanup=cleanup);
     else:
         build_generic(package, cleanup=cleanup);
 

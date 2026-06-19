@@ -2,8 +2,11 @@ from .version import __version__
 from . import PyMeshSetting
 from .timethis import timethis
 
-from numpy.testing import Tester
-test = Tester().test
+def test():
+    """Run PyMesh's test suite."""
+    import subprocess, sys
+    subprocess.call([sys.executable, "-m", "pytest",
+                     __file__.replace("__init__.py", "tests/")])
 
 # Set default logging handler to avoid "No handler found" warnings.
 import logging

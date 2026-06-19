@@ -48,8 +48,8 @@ option(PYMESH_USE_FastWindingNumber "Enable Fast Winding Number support"
     ${FAST_WINDING_NUMBER_FOUND})
 include(GenerateDependencyTargets)
 
-# Need support for C++14.
-set(CMAKE_CXX_STANDARD 14)
+# C++17 required for pybind11 2.12+, NumPy 2, and modern dependencies.
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 

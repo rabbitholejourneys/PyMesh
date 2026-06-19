@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_HashGrid(py::module &m) {
+void init_HashGrid(py::module_ &m) {
     py::class_<HashGrid, std::shared_ptr<HashGrid> > hash_grid(m, "HashGrid");
     hash_grid.def_static("create",
             [](Float cell_size, size_t dim) {

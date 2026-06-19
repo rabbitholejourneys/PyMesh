@@ -10,7 +10,7 @@
 
 namespace py = pybind11;
 
-void init_CellPartition(py::module& m) {
+void init_CellPartition(py::module_& m) {
 #if WITH_IGL_AND_CGAL
     using namespace PyMesh;
     py::class_<CellPartition, std::shared_ptr<CellPartition> >(m, "CellPartition")

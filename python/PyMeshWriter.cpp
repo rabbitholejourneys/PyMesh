@@ -10,7 +10,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_MeshWriter(py::module &m) {
+void init_MeshWriter(py::module_ &m) {
     py::class_<MeshWriter, std::shared_ptr<MeshWriter> >(m, "MeshWriter")
         .def(py::init<>())
         .def_static("create", &MeshWriter::create)

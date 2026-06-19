@@ -14,9 +14,9 @@ class TetgenException : public PyMeshException {
                 generate_err_msg();
             }
 
-        virtual ~TetgenException() throw() {}
+        virtual ~TetgenException() noexcept {}
 
-        virtual const char* what() const throw() {
+        virtual const char* what() const noexcept {
             return m_error_msg.c_str();
         }
 

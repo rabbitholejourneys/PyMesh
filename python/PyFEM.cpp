@@ -10,7 +10,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_FEM(py::module& m) {
+void init_FEM(py::module_& m) {
     py::class_<Material, std::shared_ptr<Material> >(m, "Material")
         .def_static("create", &Material::create)
         .def_static("create_isotropic", &Material::create_isotropic)

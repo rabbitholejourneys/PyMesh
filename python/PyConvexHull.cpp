@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_ConvexHull(py::module& m) {
+void init_ConvexHull(py::module_& m) {
     py::class_<ConvexHullEngine, std::shared_ptr<ConvexHullEngine> >(
             m, "ConvexHullEngine")
         .def_static("create", &ConvexHullEngine::create)

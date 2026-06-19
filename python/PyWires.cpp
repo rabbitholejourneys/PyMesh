@@ -16,7 +16,7 @@ namespace py = pybind11;
 using namespace PyMesh;
 using namespace pybind11::literals;
 
-void init_Wires(py::module &m) {
+void init_Wires(py::module_ &m) {
     py::class_<WireNetwork, std::shared_ptr<WireNetwork> >(m, "WireNetwork")
         .def_static("create", &WireNetwork::create)
         .def_static("create_raw", &WireNetwork::create_raw)

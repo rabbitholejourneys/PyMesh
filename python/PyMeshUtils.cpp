@@ -29,7 +29,7 @@ namespace py = pybind11;
 using namespace PyMesh;
 using namespace pybind11::literals;
 
-void init_MeshUtils(py::module& m) {
+void init_MeshUtils(py::module_& m) {
     m.def("convert_to_vertex_attribute",
             &AttributeUtils::convert_to_vertex_attribute);
     m.def("convert_to_vertex_attribute_from_name",

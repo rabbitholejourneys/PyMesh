@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_TriangleWrapper(py::module& m) {
+void init_TriangleWrapper(py::module_& m) {
     py::class_<TriangleWrapper, std::shared_ptr<TriangleWrapper> > triangle(m, "triangle");
     triangle
         .def(py::init<>())

@@ -13,7 +13,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_AABB(py::module &m) {
+void init_AABB(py::module_ &m) {
 #if WITH_CGAL
     py::class_<AABBTree, std::shared_ptr<AABBTree> >(m, "AABBTree")
         .def(py::init<const MatrixFr&, const MatrixIr&>())
@@ -78,7 +78,7 @@ void init_AABB(py::module &m) {
 #endif
 }
 
-void init_BVH(py::module &m) {
+void init_BVH(py::module_ &m) {
     py::class_<BVHEngine, std::shared_ptr<BVHEngine> >(m, "BVHEngine")
         .def(py::init<>())
         .def_static("create", &BVHEngine::create)

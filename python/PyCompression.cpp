@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_Compression(py::module& m) {
+void init_Compression(py::module_& m) {
     py::class_<CompressionEngine, std::shared_ptr<CompressionEngine> >(m, "CompressionEngine")
         .def_static("create", &CompressionEngine::create)
         .def_static("supports", &CompressionEngine::supports)

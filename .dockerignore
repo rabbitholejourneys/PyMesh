@@ -1,1 +1,11 @@
-*
+# Exclude git history (large, not needed inside the container)
+.git
+# Exclude local build artifacts and wheel outputs
+dist
+build_*
+third_party/build
+# Exclude Python cache files
+__pycache__
+*.pyc
+*.pyo
+*.egg-info

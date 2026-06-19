@@ -18,7 +18,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_IGL(py::module &m) {
+void init_IGL(py::module_ &m) {
 #if WITH_IGL
     py::class_<HarmonicSolver, std::shared_ptr<HarmonicSolver> >(m, "HarmonicSolver")
         .def(py::init<const MatrixFr&, const MatrixIr&>())

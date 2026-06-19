@@ -85,7 +85,7 @@ class Grid {
                 const Vector_f& coordinates) const {
             return (coordinates - m_grid_base_coord)
                 .cwiseQuotient(m_cell_size)
-                .unaryExpr(std::ptr_fun<Float, Float>(std::round))
+                .unaryExpr([](Float x){ return std::round(x); })
                 .template cast<int>();
         }
 

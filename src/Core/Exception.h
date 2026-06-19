@@ -9,10 +9,10 @@ class PyMeshException : public std::exception {
     public:
         PyMeshException(const std::string& description) :
             exception(), m_description(description) {}
-        virtual ~PyMeshException() throw() {}
+        virtual ~PyMeshException() noexcept {}
 
     public:
-        virtual const char* what() const throw() {
+        virtual const char* what() const noexcept {
             return m_description.c_str();
         }
 
@@ -24,20 +24,20 @@ class IOError : public PyMeshException {
     public:
         IOError(const std::string& description) :
             PyMeshException(description) {}
-        virtual ~IOError() throw() {}
+        virtual ~IOError() noexcept {}
 };
 
 class RuntimeError : public PyMeshException {
     public:
         RuntimeError(const std::string& description) :
             PyMeshException(description) {}
-        virtual ~RuntimeError() throw() {}
+        virtual ~RuntimeError() noexcept {}
 };
 
 class NotImplementedError : public PyMeshException {
     public:
         NotImplementedError(const std::string& description) :
             PyMeshException(description) {}
-        virtual ~NotImplementedError() throw() {}
+        virtual ~NotImplementedError() noexcept {}
 };
 }

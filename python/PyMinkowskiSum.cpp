@@ -10,7 +10,7 @@
 
 namespace py = pybind11;
 
-void init_MinkowskiSum(py::module& m) {
+void init_MinkowskiSum(py::module_& m) {
 #if WITH_IGL_AND_CGAL
     using namespace PyMesh;
     py::class_<MinkowskiSum, std::shared_ptr<MinkowskiSum> >(m, "MinkowskiSum")

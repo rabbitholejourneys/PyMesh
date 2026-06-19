@@ -10,6 +10,7 @@ from setuptools import setup, Distribution, Extension
 from subprocess import check_call
 import shutil
 import platform
+import sys
 
 exec(open(os.path.join('python/pymesh/version.py')).read())
 
@@ -60,7 +61,9 @@ class cmake_build(build):
                 "third_party/build.py cork",
                 #"third_party/build.py carve",
                 "third_party/build.py draco",
-                "third_party/build.py tbb",
+                # TBB is provided by system libtbb-dev (oneTBB 2021+);
+                # vendored Intel TBB 2019 does not compile on GCC 13+.
+                #"third_party/build.py tbb",
                 "third_party/build.py mmg",
                 "third_party/build.py json",
                 ];
@@ -72,9 +75,12 @@ class cmake_build(build):
         Config and build pymesh.
         """
         python_version = "{v[0]}.{v[1]}".format(v=platform.python_version_tuple())
+        # pybind11 2.6+ uses FindPython3 instead of FindPythonLibsNew;
+        # pass the running interpreter so cmake picks the right Python.
+        python_exe = sys.executable
         self._build(
             "build_{}".format(python_version),
-            " -DPythonLibsNew_FIND_VERSION={}".format(python_version),
+            " -DPYTHON_EXECUTABLE={}".format(python_exe),
             False,
         )
 

@@ -13,7 +13,7 @@ namespace py = pybind11;
 using Arr2D = Eigen::Matrix<double, 2, 1>;
 using Arr3D = Eigen::Matrix<double, 3, 1>;
 
-void init_predicates(py::module& m) {
+void init_predicates(py::module_& m) {
     m.def("exactinit", &exactinit);
     m.def("orient2d",
             [](Arr2D& pa, Arr2D& pb, Arr2D& pc) {

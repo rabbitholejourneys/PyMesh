@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_Triangulation(py::module& m) {
+void init_Triangulation(py::module_& m) {
     py::class_<Triangulation, std::shared_ptr<Triangulation> >(m, "Triangulation")
         .def_static("create", &Triangulation::create)
         .def("set_points", &Triangulation::set_points)

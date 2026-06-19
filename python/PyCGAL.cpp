@@ -19,7 +19,7 @@
 
 namespace py = pybind11;
 
-void init_CGAL(py::module &m) {
+void init_CGAL(py::module_ &m) {
 #if WITH_CGAL
     using namespace PyMesh;
     py::class_<SelfIntersection, std::shared_ptr<SelfIntersection> >(m, "SelfIntersection")

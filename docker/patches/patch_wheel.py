@@ -40,7 +40,8 @@ def patch_wheel(wheel_file):
             continue
         cmd = "./package_dependencies.py {}".format(
                 os.path.join(lib_dir, lib_file))
-        check_call(cmd.split(), cwd="/root/PyMesh/docker/patches")
+        patches_dir = os.path.dirname(os.path.abspath(__file__))
+        check_call(cmd.split(), cwd=patches_dir)
 
     cmd = "rm -rf {}".format(os.path.join(extraction_dir, "pymesh/third_party"))
     check_call(cmd.split())

@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_VoxelGrid(py::module &m) {
+void init_VoxelGrid(py::module_ &m) {
     py::class_<VoxelGrid<2>, std::shared_ptr<VoxelGrid<2> > >(m, "VoxelGrid2D")
         .def(py::init<Float>())
         .def("insert_mesh", &VoxelGrid<2>::insert_mesh)

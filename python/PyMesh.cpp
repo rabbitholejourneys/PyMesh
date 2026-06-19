@@ -7,7 +7,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_Mesh(py::module &m) {
+void init_Mesh(py::module_ &m) {
     py::class_<Mesh, std::shared_ptr<Mesh> >(m, "Mesh")
         .def("get_dim", &Mesh::get_dim)
         .def("get_num_vertices", &Mesh::get_num_vertices)

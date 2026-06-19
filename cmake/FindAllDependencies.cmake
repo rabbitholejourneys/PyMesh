@@ -8,10 +8,14 @@ if (NOT EIGEN_FOUND)
     find_package(Eigen REQUIRED)
 endif (NOT EIGEN_FOUND)
 
-# TBB
+# TBB — prefer system oneTBB (libtbb-dev); fall back to vendored Intel TBB 2019
 if (NOT TBB_FOUND)
-    set(TBB_ROOT ${PROJECT_SOURCE_DIR}/python/pymesh/third_party/)
     find_package(TBB REQUIRED)
+    if (NOT TBB_FOUND)
+        # Vendored TBB fallback: only if it was installed by third_party/build.py
+        set(TBB_ROOT ${PROJECT_SOURCE_DIR}/python/pymesh/third_party/)
+        find_package(TBB REQUIRED)
+    endif()
 endif (NOT TBB_FOUND)
 
 # SpraseHash

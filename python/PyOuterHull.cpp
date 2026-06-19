@@ -9,7 +9,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_OuterHull(py::module& m) {
+void init_OuterHull(py::module_& m) {
     py::class_<OuterHullEngine, std::shared_ptr<OuterHullEngine> >(
             m, "OuterHullEngine")
         .def_static("create", &OuterHullEngine::create)

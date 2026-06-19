@@ -10,7 +10,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_Boolean(py::module& m) {
+void init_Boolean(py::module_& m) {
     py::class_<BooleanEngine, std::shared_ptr<BooleanEngine> >(m, "BooleanEngine")
         .def_static("create", &BooleanEngine::create)
         .def("set_mesh_1", &BooleanEngine::set_mesh_1)

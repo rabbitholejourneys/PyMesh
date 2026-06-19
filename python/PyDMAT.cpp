@@ -10,7 +10,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_DMAT(py::module &m) {
+void init_DMAT(py::module_ &m) {
 #if WITH_IGL
     m.def("load_matrix", &DMAT::load_matrix<MatrixF>);
     m.def("save_matrix", &DMAT::save_matrix<MatrixF>);

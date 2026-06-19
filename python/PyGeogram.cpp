@@ -12,7 +12,7 @@
 namespace py = pybind11;
 using namespace PyMesh;
 
-void init_Geogram(py::module &m) {
+void init_Geogram(py::module_ &m) {
 #if WITH_GEOGRAM
     GeogramBase init; // Initialize geogram once for all.
     m.def("load_geogram_mesh", [](const std::string& filename) {
